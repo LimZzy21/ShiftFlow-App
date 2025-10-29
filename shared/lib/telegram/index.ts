@@ -1,0 +1,1 @@
+export { getTelegramApp } from "./webApp";
