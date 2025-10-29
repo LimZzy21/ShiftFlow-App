@@ -1,6 +1,4 @@
-"use client";
 import { getPhraseByDayTime } from "@/shared/lib";
-import { useRef } from "react";
 
 export const MoodPhrase = () => {
   const phrase = getPhraseByDayTime();
