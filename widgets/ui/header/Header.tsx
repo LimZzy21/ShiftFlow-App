@@ -2,7 +2,7 @@
 
 import { useTelegram } from "@/shared/hooks/useTelegram";
 import Image from "next/image";
-import { MoodPhrase } from "@/widgets/ui/header/MoodPhrase.";
+import { MoodPhrase } from "@/widgets/ui/header/MoodPhrase";
 
 export const Header = () => {
   const { user } = useTelegram();
