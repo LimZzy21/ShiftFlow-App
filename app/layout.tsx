@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Pattaya, Ubuntu } from "next/font/google";
 import "./globals.css";
 import { TelegramProvider } from "@/app/providers/TelegramProvider";
 import Script from "next/script";
+import { Header } from "@/widgets/ui/header/Header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const getPattaya = Pattaya({
+  variable: "--font-pattaya",
+  weight: "400",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const getUbuntu = Ubuntu({
+  variable: "--font-ubuntu",
+  weight: ["400", "300", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -30,9 +31,12 @@ export default function RootLayout({
         <Script src="https://telegram.org/js/telegram-web-app.js"></Script>
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${getPattaya.variable} ${getUbuntu.variable} antialiased bg-linear-to-bl from-violet-500 to-fuchsia-500 min-h-screen `}
       >
-        <TelegramProvider>{children}</TelegramProvider>
+        <TelegramProvider>
+          <Header />
+          {children}
+        </TelegramProvider>
       </body>
     </html>
   );
