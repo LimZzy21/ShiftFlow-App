@@ -1,5 +1,5 @@
-import type { Priority } from "./types";
 import { ChevronUp, ChevronDown, Minus, ChevronsUp } from "lucide-react";
+import { Priority } from "@/shared/types";
 
 export const PRIORITY_LABELS: Record<Priority, string> = {
   urgent: "urgent",

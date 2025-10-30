@@ -1,4 +1,4 @@
-import { Task } from "@/entities";
+import { Task } from "@/shared/types/task";
 
 export const tasksMock: Task[] = [
   {

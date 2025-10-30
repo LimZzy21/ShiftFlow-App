@@ -1,20 +1,14 @@
-import { Task } from "@/entities";
-import { cn, formatDate, getItemByKey } from "@/shared/lib";
+import { cn, formatDate } from "@/shared/lib";
 import { Pin } from "lucide-react";
-import { STATUS_COLORS, STATUS_LABELS } from "@/entities/model";
-import { PRIORITY_ICONS, PRIORITY_COLORS } from "@/entities/model/";
-import { IconRenderer } from "@/shared/components/ui";
+import { PriorityBadge } from "@task/ui/task-card/PriorityBadge";
+import { StatusBadge } from "@task/ui/task-card/StatusBadge";
+import { Task } from "@/shared/types";
 
 interface TaskCardProps {
   task: Task;
 }
 
 export const TaskCard = ({ task }: TaskCardProps) => {
-  const status = getItemByKey(task.status, STATUS_LABELS);
-  const color = getItemByKey(task.status, STATUS_COLORS);
-  const priorityIcon = getItemByKey(task.priority, PRIORITY_ICONS);
-  const priorityColor = getItemByKey(task.priority, PRIORITY_COLORS);
-
   return (
     <div
       className={cn(
@@ -35,21 +29,8 @@ export const TaskCard = ({ task }: TaskCardProps) => {
               <p className={"text-[10px]"}>{formatDate(task.deadline)}</p>
             </div>
           )}
-
-          <div className={cn("px-1.5 rounded-xl", color)}>
-            <p className={cn("text-[12px] ")}>{status}</p>
-          </div>
-          <div
-            className={cn(
-              "flex items-center justify-center rounded-full border-2 size-5 ",
-              priorityColor,
-            )}
-          >
-            <IconRenderer
-              Icon={priorityIcon}
-              className={cn("size-4", priorityColor)}
-            />
-          </div>
+          <StatusBadge status={task.status} />
+          <PriorityBadge priority={task.priority} />
           {task.isPinned && (
             <Pin
               className={

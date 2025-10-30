@@ -1,5 +1,5 @@
 import { tasksMock } from "@/shared/mocks/tasks";
-import { TaskCard } from "@/entities/ui/TaskCard";
+import { TaskCard } from "@task/ui/task-card/TaskCard";
 
 export const TaskList = () => {
   return (

@@ -1,4 +1,4 @@
-import type { Status } from "./types";
+import { Status } from "@/shared/types";
 
 export const STATUS_LABELS: Record<Status, string> = {
   todo: "Todo",
