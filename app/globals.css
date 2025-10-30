@@ -3,6 +3,24 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@layer base {
+    .font-ubuntu {
+        font-family: var(--font-ubuntu);
+    }
+
+    .font-pattaya {
+        font-family: var(--font-pattaya);
+    }
+
+    p {
+        font-family: var(--font-ubuntu);
+    }
+
+    span {
+        font-family: var(--font-ubuntu);
+    }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

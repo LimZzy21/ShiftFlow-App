@@ -10,7 +10,11 @@ export const Header = () => {
   return (
     <div className={"p-4 justify-between flex items-center"}>
       <div className={"relative w-2/3"}>
-        <h1 className={"text-3xl text-white relative text-shadow-2xs z-10"}>
+        <h1
+          className={
+            "text-3xl text-white relative text-shadow-2xs z-10 font-pattaya"
+          }
+        >
           ShiftFlow
         </h1>
         <MoodPhrase />

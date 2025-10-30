@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Pattaya } from "next/font/google";
+import { Pattaya, Ubuntu } from "next/font/google";
 import "./globals.css";
 import { TelegramProvider } from "@/app/providers/TelegramProvider";
 import Script from "next/script";
@@ -8,6 +8,11 @@ import { Header } from "@/widgets/ui/header/Header";
 const getPattaya = Pattaya({
   variable: "--font-pattaya",
   weight: "400",
+});
+
+const getUbuntu = Ubuntu({
+  variable: "--font-ubuntu",
+  weight: ["400", "300", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -26,7 +31,7 @@ export default function RootLayout({
         <Script src="https://telegram.org/js/telegram-web-app.js"></Script>
       </head>
       <body
-        className={`${getPattaya.className} antialiased bg-linear-to-bl from-violet-500 to-fuchsia-500 min-h-screen `}
+        className={`${getPattaya.variable} ${getUbuntu.variable} antialiased bg-linear-to-bl from-violet-500 to-fuchsia-500 min-h-screen `}
       >
         <TelegramProvider>
           <Header />

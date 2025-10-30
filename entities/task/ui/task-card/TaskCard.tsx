@@ -10,15 +10,10 @@ interface TaskCardProps {
 
 export const TaskCard = ({ task }: TaskCardProps) => {
   return (
-    <div
-      className={cn(
-        "bg-white rounded-xl ps-3 pe-2 min-h-7 py-1",
-        task.isPinned && "border-b-green-600 border-x-green-600 border-2",
-      )}
-    >
+    <div className={cn("bg-white rounded-xl ps-3 pe-2 min-h-7 py-1")}>
       <div className={"flex justify-between"}>
         <div>
-          <h2 className={"text-sm text-zinc-700"}>
+          <h2 className={"text-sm text-zinc-700 font-ubuntu"}>
             {task.title} {task.emoji}
           </h2>
         </div>

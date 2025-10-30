@@ -6,7 +6,7 @@ export const MoodPhrase = () => {
   return (
     <p
       suppressHydrationWarning
-      className="text-[10px] relative -top-1.5 z-0 text-red-900"
+      className="text-[10px] relative -top-1.5 z-0 text-red-900 font-pattaya"
     >
       {phrase}
     </p>
