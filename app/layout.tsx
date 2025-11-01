@@ -4,6 +4,7 @@ import "./globals.css";
 import { TelegramProvider } from "@/app/providers/TelegramProvider";
 import Script from "next/script";
 import { Header } from "@/widgets/ui/header/Header";
+import { NavigateTabs } from "@/widgets/ui/navigate-tabs/NavigateTabs";
 
 const getPattaya = Pattaya({
   variable: "--font-pattaya",
@@ -36,6 +37,7 @@ export default function RootLayout({
         <TelegramProvider>
           <Header />
           {children}
+          <NavigateTabs />
         </TelegramProvider>
       </body>
     </html>

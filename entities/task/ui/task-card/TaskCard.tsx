@@ -1,7 +1,6 @@
-import { cn, formatDate } from "@/shared/lib";
+import { cn, formatDateHelper } from "@/shared/lib";
 import { Pin } from "lucide-react";
-import { PriorityBadge } from "@task/ui/task-card/PriorityBadge";
-import { StatusBadge } from "@task/ui/task-card/StatusBadge";
+import { PriorityBadge, StatusBadge } from "@task/ui/task-card";
 import { Task } from "@/shared/types";
 
 interface TaskCardProps {
@@ -21,7 +20,7 @@ export const TaskCard = ({ task }: TaskCardProps) => {
         <div className={"my-auto relative flex items-center gap-x-1"}>
           {task.deadline && (
             <div>
-              <p className={"text-[10px]"}>{formatDate(task.deadline)}</p>
+              <p className={"text-[10px]"}>{formatDateHelper(task.deadline)}</p>
             </div>
           )}
           <StatusBadge status={task.status} />
