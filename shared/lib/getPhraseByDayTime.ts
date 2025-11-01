@@ -1,4 +1,4 @@
-import { phrases, phrasesChill, phrasesFunny } from "@/shared/const/phrases";
+import { phrases, phrasesChill, phrasesFunny } from "@/shared/const/";
 import { getRandomIndex } from "@/shared/lib";
 
 export const getPhraseByDayTime = () => {

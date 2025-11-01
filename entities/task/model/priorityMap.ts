@@ -2,7 +2,7 @@ import { ChevronUp, ChevronDown, Minus, ChevronsUp } from "lucide-react";
 import { Priority } from "@/shared/types";
 
 export const PRIORITY_LABELS: Record<Priority, string> = {
-  urgent: "urgent",
+  urgent: "Urgent",
   low: "Low",
   medium: "Medium",
   high: "High",
