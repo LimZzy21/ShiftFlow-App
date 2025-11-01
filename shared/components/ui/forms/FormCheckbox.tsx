@@ -2,22 +2,15 @@
 
 import { useField } from "formik";
 import { Checkbox } from "@/shared/components/ui/checkbox";
-import { cn } from "@/shared/lib/styles/cn";
 import { FormLabel } from "@/shared/components/ui/forms/FormLabel";
 
 interface FormCheckboxProps {
   name: string;
   label?: string;
-  className?: string;
   helperText?: string;
 }
 
-export function FormCheckbox({
-  name,
-  label,
-  helperText,
-  className,
-}: FormCheckboxProps) {
+export function FormCheckbox({ name, label, helperText }: FormCheckboxProps) {
   const [field, _, helpers] = useField({ name, type: "checkbox" });
 
   return (
