@@ -5,6 +5,7 @@ import { TelegramProvider } from "@/app/providers/TelegramProvider";
 import Script from "next/script";
 import { Header } from "@/widgets/ui/header/Header";
 import { NavigateTabs } from "@/widgets/ui/navigate-tabs/NavigateTabs";
+import { StoreProvider } from "@/app/providers/StoreProvider";
 
 const getPattaya = Pattaya({
   variable: "--font-pattaya",
@@ -35,9 +36,11 @@ export default function RootLayout({
         className={`${getPattaya.variable} ${getUbuntu.variable} antialiased bg-linear-to-bl from-violet-500 to-fuchsia-500 min-h-screen `}
       >
         <TelegramProvider>
-          <Header />
-          {children}
-          <NavigateTabs />
+          <StoreProvider>
+            <Header />
+            {children}
+            <NavigateTabs />
+          </StoreProvider>
         </TelegramProvider>
       </body>
     </html>

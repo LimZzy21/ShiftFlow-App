@@ -7,7 +7,8 @@ export interface Task {
   title: string;
   createdAt: string;
   updatedAt?: string;
-  deadline?: string;
+  deadlineTime?: string;
+  deadlineDate?: string;
   status: Status;
   priority: Priority;
   isPinned: boolean;
@@ -16,3 +17,13 @@ export interface Task {
   description?: string;
   emoji?: string;
 }
+
+export type CreateTaskPayload = Omit<
+  Task,
+  "id" | "createdAt" | "deadlineDate" | "deadlineTime" | "priority" | "category"
+> & {
+  deadlineDate?: string | null;
+  deadlineTime?: string | null;
+  priority?: Priority | null;
+  category?: Category | null;
+};
