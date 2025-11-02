@@ -15,8 +15,12 @@ import {
   TASK_CATEGORY_MAP,
   TASK_PRIORITY_MAP,
 } from "@/features/task/create/const/task";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppSelector";
+import { createTask } from "@task/model/slice";
+import { Status } from "@task/model";
 
 export const CreateTaskForm = () => {
+  const dispatch = useAppDispatch();
   return (
     <div className="px-4 py-2">
       <Formik
@@ -28,9 +32,12 @@ export const CreateTaskForm = () => {
           priority: null,
           category: null,
           isPinned: false,
-          status: "todo",
+          status: "todo" as Status,
         }}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={(values, { resetForm }) => {
+          dispatch(createTask(values));
+          resetForm();
+        }}
       >
         {() => (
           <Form className="space-y-2 flex flex-col">

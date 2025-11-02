@@ -1,5 +1,5 @@
 import { cn, getItemByKey } from "@/shared/lib";
-import { PRIORITY_COLORS, PRIORITY_ICONS } from "@task/model/priorityMap";
+import { PRIORITY_COLORS, PRIORITY_ICONS } from "@task/model";
 import { IconRenderer } from "@/shared/components/ui";
 import { Priority } from "@/shared/types";
 
