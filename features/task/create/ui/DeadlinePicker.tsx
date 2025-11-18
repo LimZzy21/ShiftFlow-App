@@ -55,7 +55,7 @@ export function DeadlinePicker({
               mode="single"
               captionLayout="dropdown"
               onSelect={(date) => {
-                dateHelpers.setValue(date ?? null);
+                dateHelpers.setValue(date ? date.toISOString() : null);
                 setOpen(false);
               }}
             />

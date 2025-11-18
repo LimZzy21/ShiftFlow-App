@@ -18,13 +18,15 @@ export const TaskCard = ({ task }: TaskCardProps) => {
         </div>
 
         <div className={"my-auto relative flex items-center gap-x-1"}>
-          {task.deadline && (
+          {task.deadlineDate && (
             <div>
-              <p className={"text-[10px]"}>{formatDateHelper(task.deadline)}</p>
+              <p className={"text-[10px]"}>
+                {formatDateHelper(task.deadlineDate)}
+              </p>
             </div>
           )}
           <StatusBadge status={task.status} />
-          <PriorityBadge priority={task.priority} />
+          {task.priority && <PriorityBadge priority={task.priority} />}
           {task.isPinned && (
             <Pin
               className={
