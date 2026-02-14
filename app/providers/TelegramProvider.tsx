@@ -1,20 +1,10 @@
 "use client";
 
-import { useEffect } from "react";
+import { ReactNode } from "react";
+import { useTelegramInit } from "@/shared/hooks/useTelegramInit";
 
-export const TelegramProvider = ({
-  children,
-}: {
-  children: React.ReactNode;
-}) => {
-  useEffect(() => {
-    const tg = (window as TelegramWindow).Telegram?.WebApp;
-    if (!tg) return;
-
-    tg.ready();
-    tg.expand();
-    console.log("Telegram :", tg);
-  }, []);
+export const TelegramProvider = ({ children }: { children: ReactNode }) => {
+  useTelegramInit();
 
   return <>{children}</>;
 };

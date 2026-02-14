@@ -22,6 +22,7 @@
     "paths": {
       "@/*": ["./*"],
       "@task/*": ["entities/task/*"],
+      "@user/*": ["entities/user/*"],
     }
   },
   "include": [

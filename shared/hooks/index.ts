@@ -1,1 +1,1 @@
-export { useTelegram } from "./useTelegram";
+export { useTelegramInit } from "./useTelegramInit";
