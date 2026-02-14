@@ -1,11 +1,12 @@
 "use client";
 
-import { useTelegram } from "@/shared/hooks/useTelegram";
 import Image from "next/image";
 import { MoodPhrase } from "@/widgets/ui/header/MoodPhrase";
+import { selectAvatar } from "@user/model";
+import { useAppSelector } from "@/shared/lib/hooks/useAppSelector";
 
 export const Header = () => {
-  const { user } = useTelegram();
+  const ava = useAppSelector(selectAvatar);
 
   return (
     <div className={"p-4 justify-between flex items-center"}>
@@ -19,12 +20,11 @@ export const Header = () => {
         </h1>
         <MoodPhrase />
       </div>
-      {user?.photo_url ? (
+      {ava ? (
         <Image
-          key={user.photo_url}
           className="rounded-full h-full shadow-md"
-          src={user.photo_url}
-          alt={`${user.first_name}'s avatar`}
+          src={ava}
+          alt={`your's avatar`}
           width={32}
           height={32}
         />

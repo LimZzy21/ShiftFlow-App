@@ -28,20 +28,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <head>
-        <Script src="https://telegram.org/js/telegram-web-app.js"></Script>
-      </head>
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${getPattaya.variable} ${getUbuntu.variable} antialiased bg-linear-to-bl from-violet-500 to-fuchsia-500 min-h-screen `}
       >
-        <TelegramProvider>
-          <StoreProvider>
+        <Script
+          src="https://telegram.org/js/telegram-web-app.js"
+          strategy="beforeInteractive"
+        />
+        <StoreProvider>
+          <TelegramProvider>
             <Header />
             {children}
             <NavigateTabs />
-          </StoreProvider>
-        </TelegramProvider>
+          </TelegramProvider>
+        </StoreProvider>
       </body>
     </html>
   );
