@@ -5,6 +5,7 @@ declare global {
     initDataUnsafe?: {
       user?: TelegramUser;
     };
+    initData: string;
   }
 
   interface TelegramUser {
